@@ -88,3 +88,36 @@ function isUnique(str) {
   }
   return true; //this is for if we get through the entire thing and there are no duplicates
 }
+
+// console.log(
+//   isUnique('abcdef'),
+//   isUnique('89%df#$^a&x'),
+//   isUnique('abcAdef'),
+//   isUnique('abcaef'),
+//
+// );
+//
+// function isUnique(str) {
+//   return new Set(str).size === string.length;
+// }
+//
+
+//
+function flatten(nestedArray) {
+  const newArray = [];
+
+  for(let i = 0; i < nestedArray.length; i++) {
+    const thisItem = nestedArray[i];
+
+    if(Array.isArray(thisItem)) {
+      for(let j = 0; j < thisItem.length; j++) {
+        newArray.push(thisItem[j]);
+        }
+      } else {
+          newArray.push(thisItem);
+      }
+    }
+    return newArray;
+}
+
+console.log(flatten([1, 2, 3, [4, 5], 6]));
