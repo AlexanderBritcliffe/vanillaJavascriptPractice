@@ -102,7 +102,7 @@ function isUnique(str) {
 // }
 //
 
-//
+//this will work for one level deep arrays
 function flatten(nestedArray) {
   const newArray = [];
 
@@ -121,3 +121,66 @@ function flatten(nestedArray) {
 }
 
 console.log(flatten([1, 2, 3, [4, 5], 6]));
+
+//-------------------------------
+//this wil work for infinitely nested arrays
+
+function flatten(nestedArray) {
+  const newArray = [];
+
+  for(let i = 0; i < nestedArray.length; i++) {
+    const thisItem = nestedArray[i];
+
+    if(Array.isArray(thisItem)) {
+      const flatItem = flaten(thisItem);
+      for(let j = 0; j < flatItem.length; j++) {
+        newArray.push(flatItem[j]);
+        }
+      } else {
+          newArray.push(thisItem);
+      }
+    }
+    return newArray;
+}
+
+console.log(flatten([1, 2, 3, [4, 5], 6]));
+
+
+console.log(
+  removeDupes('abcd'),
+  removeDupes('aabbccdd'),
+  removeDupes('abababcdcdcd')
+);
+
+
+function removeDupes(str) {
+  const uniqueChars = [];
+  for(let i = 0; i < str.length; i++) {
+    const thisChar = str[i]
+
+    if(uniqueChars.includes(thisChar)) {
+      continue;
+    } else {
+      uniqueChars.push(thisChar);
+    }
+  }
+  return uniqueChars.join('');
+}
+
+console.log(
+  removeDupes('abcd'),
+  removeDupes('aabbccdd'),
+  removeDupes('abababcdcdcd')
+);
+
+function removeDupes(str) {
+  const chars = new Set(str);
+  return Array.from(chars).join('');
+}
+
+//above is the simplest solution...when we insert a string into a set
+//each individual character gets inserted into a set only unique values
+//are stored so any duplicates will be ignored and discarded
+//after set is created array.from which takes in itterable which is a data
+//structure that keeps track of the order in which data was inserted and
+//set does exactly that it keeps track of characters in order they were inserted
