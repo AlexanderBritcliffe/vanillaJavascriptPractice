@@ -184,3 +184,45 @@ function removeDupes(str) {
 //after set is created array.from which takes in itterable which is a data
 //structure that keeps track of the order in which data was inserted and
 //set does exactly that it keeps track of characters in order they were inserted
+
+//the set does exactly that it keeps track of character in orderr they were insereted backwards
+
+console.log(
+  highestFrequency(['a', 'b', 'c', 'd', 'e']),
+  highestFrequency(['abc', 'def', 'abc', 'def', 'abc']),
+  highestFrequency(['abc', 'def']),
+  highestFrequency(['abc', 'abc', 'def', 'def', 'def', 'ghi', 'ghi', 'ghi', 'ghi'])
+);
+
+function highestFrequency(strings) {
+  const frequencies = {};
+  let maxFrequency = 0; //this variable stores highest frequency we have come across so far
+  let mostFrequentString = strings[0]; //this is initializerd to the first item in the strings array
+
+  for(let i = 0; i < strings.length; i++) {
+    const thisStr = strings[i];
+
+    if(frequencies[thisStr] === undefined)//this checks if it is the first time it is in object if it is it wont be present in object
+      frequencies[thisStr] = 1;  //this sets each string to the number one as loop moves through...line 202 or 203 says if undefined give it value of 1
+    } else {
+      frequencies[thisStr]++; //this increses vale of duplicates by 1
+    }
+    if (frequencies[thisStr] > maxFrequency) //this checks if our new frequency (line 208) ius higher than the pervious max frequency we had
+      maxFrequency = frequencies[thisStr];  //if it is we want to update maxFrequency number
+      mostFrequentString = thisStr; //we also want to update mostFrequentString because this means it has changed
+  }
+    return mostFrequentString;
+}
+
+console.log(
+  stringRotation("rotation", "tationro"),
+  stringRotation("Javascript", "scriptJava"),
+  stringRotation("hello", "there"),
+  stringRotation("Javascript,", "Java")
+);
+
+function stringRotation(str1, str2) {
+  if(str1.length !== str2.length) {
+    return false;
+  }
+}
