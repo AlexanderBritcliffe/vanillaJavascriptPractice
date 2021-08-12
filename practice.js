@@ -222,7 +222,51 @@ console.log(
 );
 
 function stringRotation(str1, str2) {
-  if(str1.length !== str2.length) {
+  if(str1.length !== str2.length) {//this checks for length if lengths are different it can not be a roatation
     return false;
   }
+  for(let i = 0; i < str1.length; i++) {
+    const rotation = str1.slice(i, str1.length) + str1.slice(0, i);
+
+    if(rotation === str2) {
+      return true;
+    }
+  }
+  return false;
+}
+
+console.log(
+  stringRotation("rotation", "tationro"),
+  stringRotation("Javascript", "scriptJava"),
+  stringRotation("hello", "there"),
+  stringRotation("Javascript,", "Java")
+);
+
+function stringRotation(str1, str2) {
+  return str1.length === str2.length && (str1 + str1).includes(str2);
+}
+
+console.log(
+  arraySubset([2, 1, 3], [1, 2, 3]),
+  arraySubset([2, 1, 1, 3,], [1, 2, 3])
+  arraySubset([1, 2, 3,], [1, 2, 2, 3]),
+  arraySubset([1, 2, 3], [1, 1, 1])
+);
+
+function arraySubset(superset, subset) {
+  if(subset.length > superset.length) {
+    return false;
+  }
+
+  const superCopy = [...superset];//...makes a copy of the first array
+
+  for(let i = 0; i < subset.length; i++) {
+    const superIndex = superCopy.indexOf(subset[i]); //this is finding where in the superset i exists if it exists at all
+
+    if(superIndex === -1) { //if it does not exists superindex will be equal to -1
+      return false;
+    }
+    delete superCopy[superIndex];
+  }
+  return true;
 }
