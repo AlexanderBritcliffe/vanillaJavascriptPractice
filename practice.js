@@ -30,7 +30,7 @@ console.log(
 );
 
 function isUnique(str) {
-  const chars = str.split('').sort(); //splits into an array and sort them from left to right dbac would be a, b, c, d
+  const chars = str.split('').sort(); //splits into an array and sort them from left to right dbac would be a, b, c, d (alphabetically)
 
 
   for(let i=1; i <= chars.length; i++) { //dbaca would be aabcd---thats why i starts at one or second character so it can compare to interger next to it
