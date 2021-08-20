@@ -34,7 +34,7 @@ function isUnique(str) {
 
 
   for(let i=1; i <= chars.length; i++) { //dbaca would be aabcd---thats why i starts at one or second character so it can compare to interger next to it
-    if(chars[i] === chars[i -1]) {
+    if(chars[i] === chars[i -1]) { //this is saying go back one character andf check if it is the same as current hence why we are starting on 1 instead of 0 in loop
       return false;
     }
   }
