@@ -16,6 +16,8 @@ function isUnique(str) {
   return true;
 }
 
+//git test
+
 //line 10 loops from left to right
 //line 11 goes through string from right to
 //left so for example initially it will go from left to right looking for a and so on
@@ -248,7 +250,7 @@ function stringRotation(str1, str2) {
 
 console.log(
   arraySubset([2, 1, 3], [1, 2, 3]),
-  arraySubset([2, 1, 1, 3,], [1, 2, 3])
+  arraySubset([2, 1, 1, 3,], [1, 2, 3]),
   arraySubset([1, 2, 3,], [1, 2, 2, 3]),
   arraySubset([1, 2, 3], [1, 1, 1])
 );
@@ -269,4 +271,14 @@ function arraySubset(superset, subset) {
     delete superCopy[superIndex];
   }
   return true;
+}
+
+
+function maximumProfits(prices) {
+  const profits = [];
+
+  for(let i = 0; i < prices.length; i++) {
+    for (let j = i + 1; j < prices.length; j++)
+    }
+  }
 }
