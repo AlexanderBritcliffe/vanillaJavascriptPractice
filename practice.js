@@ -6,6 +6,8 @@ console.log(
 
 );
 
+//small github test
+
 function isUnique(str) {
 
   for(let i=0; i < str.length; i++) { //process every character in loop
@@ -16,7 +18,7 @@ function isUnique(str) {
   return true;
 }
 
-//git test
+
 
 //line 10 loops from left to right
 //line 11 goes through string from right to
